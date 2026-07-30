@@ -1,30 +1,42 @@
-# José Naim Tool
+# Akamai Hostnames App
 
-Python app wrapped around Akamai PowerShell module, to easily search your Akamai accounts, retrieve production hostnames, and export the results to a CSV file.
+Standalone desktop GUI application for managing Akamai account hostnames. It allows users to search accounts, retrieve production hostnames, resolve DNS CNAMEs and Akamai slots (using `dig`), and fetch active DV challenges directly from the Akamai API. 
 
+Results can be exported to a consolidated CSV file.
 
-## Prerequisites
+## System Prerequisites
 
-1. **PowerShell Core (`pwsh`)**: Must be installed and accessible via your system's PATH.
-2. **Akamai PowerShell Module**: Installed in your PowerShell environment (`Install-Module -Name Akamai`).
-3. **Akamai Credentials**: A valid `.edgerc` file configured in your user directory with the necessary API credentials to access Property Manager (PAPI) and Identity & Access Management.
+Your system must have the following installed:
+1. **PowerShell Core (`pwsh`)** with the **Akamai PowerShell Module** installed.
+2. **`dig`** (command-line DNS lookup utility, native to most macOS/Linux systems).
+3. A valid **`.edgerc`** credential file (used for both PowerShell commands and API authentication).
 
-## Python Dependencies
+## Python Requirements
 
-This script is built entirely using Python's standard library. There are no external `pip` packages required to run the source code.
+The app utilizes Python's built-in libraries (like `tkinter` for the GUI and `subprocess` for PowerShell execution) along with a few external packages for API requests:
+* `edgegrid-python`
+* `requests`
 
-**Standard Libraries Used:**
-* `tkinter` (GUI framework)
-* `subprocess` (PowerShell execution)
-* `json` (Data parsing)
-* `csv` (Export functionality)
-* `threading` (Asynchronous UI loading)
+## Installation & Setup
 
+To protect your system's default Python environment, it is highly recommended to run this app inside a virtual environment.
 
-## How to Run Locally
+**1. Navigate to the project folder:**
+```bash
+cd /path/to/akamai_hostname_app/python_version/
 
-1. Clone or download this repository.
-2. Open your terminal and navigate to the folder containing `josenaim.py`.
-3. Run the script:
-   ```bash
-   python akhosts.py
+**2. Create a virtual environment:**
+python3 -m venv venv
+
+**3. Activate the virtual environment:**
+source venv/bin/activate
+
+**4. Install the required Python packages:**
+pip install edgegrid-python requests
+
+How to run:
+# Activate the environment (if starting a new terminal session)
+source venv/bin/activate
+
+# Run the app
+python akhosts.py
