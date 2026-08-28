@@ -1,6 +1,6 @@
 # Akamai Hostnames App
 
-Standalone desktop GUI application for managing Akamai account hostnames. It allows users to search accounts, retrieve production hostnames, resolve DNS CNAMEs and Akamai slots (using `dig`), and fetch active DV challenges directly from the Akamai API. 
+Application for managing Akamai account hostnames and migrations to Secure by Default. It allows users to search accounts, retrieve production hostnames, resolve DNS CNAMEs and Akamai slots (using `dig`), and fetch active DV challenges directly from the Akamai API, and migrated hostnames to Secure By Default settings in PM. 
 
 Results can be exported to a consolidated CSV file.
 
